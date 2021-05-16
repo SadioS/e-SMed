@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <metacharset = "utf 8">
+    <link rel="stylesheet" href="login.css"/>
+    <title>e-SMed</title>
+  </head>
+
+  <body>
+    <div id='bloc'>
+      <header>
+        <div id='logo' id='conteneur'>
+          <video src='{{url_for('static', filename='logo.mp4')}}' type='video/mp4' loop autoplay width="200" height="200"></video>
+        </div>
+        <div id='bienvenu' id='conteneur'>
+          <h1>Bienvenue chez e-SMed, votre laboratoire d'analyse médical en ligne. 
+          </br>Accédez à vos résultat en ligne, de n'importe où, en un clic.</h1>
+        </div>
+      </header>
+
+      <section>
+        <p><center>Vous n'avez pas de compte?<br/>Enregistrez-vous</center></p>
+        <form method="post">
+          <p>
+            <input type='text' name='nom' id='nom' placeholder="nom" autofocus required><br/>
+            <input type='text' name='prenom' id='prenom' placeholder="prénom" required><br />
+            <input type="date" name="date" id="date" placeholder="date de naissance" required><br />
+            <input type='email' name="mail" id='mail' placeholder="email" required><br/>
+
+            <input type="tel" name="num" id="num" placeholder="numéro de téléphone" required><br/>
+
+            <input type='text' name='pseudo' id='pseudo' placeholder="identifiant" maxlength="15" required /><br />
+
+            <input type='password' name='mdp' id="mdp" placeholder="mot de passe" maxlength="15" required/><br /><br />
+
+            <input type="submit" value="Envoyer" />
+            <input type="reset" value="Réinitialiser" />
+          </p>
+        </form>
+      </section>
+
+      </body>

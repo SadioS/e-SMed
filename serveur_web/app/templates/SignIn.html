@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <metacharset = "utf 8">
+    <link rel="stylesheet" href={{ url_for('static', filename='accueil.css') }}/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>e-SMed</title>
+  </head>
+
+  <SCRIPT SRC='login.js'></SCRIPT>
+
+  <body>
+  <form method="post">
+    <div class='container'>
+      <div class='logo'>
+        <video src={{ url_for('static', filename='logo.mp4', type='video/mp4' ) }} loop autoplay width="200" height="200"></video>
+      </div>
+
+      <div class='formContainer'>
+
+        <div class='img'>
+          <image src={{ url_for('static', filename='img2.jpg') }} ></image>
+        </div>
+
+          <div class='login'>
+            <h1>Enregistrez-vous</h1>
+              <div class='inputRow'>
+                <div class='inputIcon'>
+                  <i class='bx bx-user bx-tada' ></i>
+                </div>
+                  <input type='text' name='nom' id='nom' placeholder="nom" autofocus required/>
+              </div>
+              <div class='inputRow'>
+                <div class='inputIcon'>
+                  <i class='bx bx-user bx-tada' ></i>
+                </div>
+                <input type="text" name="prenom" id="prenom" placeholder="prenom" required><br />
+              </div>
+              <div class='inputRow'>
+                <div class='inputIcon'>
+                  <i class='bx bx-lock' ></i>
+                </div>
+                <input type='password' name='mdp' id="mdp" placeholder="mot de passe" maxlength="15" required/><br/><br/>
+              </div>
+              <div class='inputRow'>
+                <div class='inputIcon'>
+                  <i class='bx bx-envelope' ></i>
+                </div>
+                <input type='email' name="mail" id='mail' placeholder="email" required><br/>
+              </div>
+              <div class='inputRow'>
+                <div class='inputIcon'>
+                  <i class='bx bx-phone-call' ></i>
+                </div>
+                  <input type="tel" name="num" id="num" placeholder="numéro de téléphone" required>
+                </div>
+                <div class='inputRow'>
+                <div class='inputIcon'>
+                  <i class='bx bx-lock' ></i>
+                </div>
+                <input type="date" name="date" id="date" placeholder="date de naissance" required><br />
+              </div>
+              
+              <div class='inputRow'>
+                <div class='inputIcon'>
+                  <i class='bx bx-home' ></i>
+                </div>
+                <input type='text' name='adresse' id="adresse" placeholder="adresse" required/><br />
+              </div>
+              
+
+              
+
+              <div class="bouton">
+                <input type="submit" value="Envoyer" id='logbouton'/>
+                
+              </div>
+          </div>
+        </div>
+      </div>
+      </form> 
+  </body>

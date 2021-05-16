@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <metacharset = "utf 8">
+    <link rel="stylesheet" href="login.css"/>
+    <title>e-SMed</title>
+  </head>
+
+  <SCRIPT SRC='login.js'>
+  </SCRIPT>
+  
+  <body>
+    <div id='bloc'>
+      <header>
+        <div id='logo' id='conteneur'>
+          <video src='{{url_for('static', filename='logo.mp4')}}' type='video/mp4' loop autoplay width="200" height="200"></video>
+        </div>
+        <div id='bienvenu' id='conteneur'>
+          <h1>Bienvenue chez e-SMed, votre laboratoire d'analyse médical en ligne. </br>Accédez à vos résultat en ligne, de n'importe où, en un clic.</h1>
+        </div>
+      </header>
+    </div>
+    
+    <section>
+        <p>Vous avez déjà un compte?</p>
+        <p>Entrez vos identifiants ci-dessous</p>
+        <form method="post" >
+          <p>
+            <input type='text' name='mail' id='mail' placeholder="identifiant" maxlength="15" autofocus required/>
+
+            <br />
+            <input type='password' name='mdp' id="mdp" placeholder="mot de passe" maxlength="15" required/><br/><br/>
+            <input type="submit" value="Envoyer" />
+          </p>
+        </form>
+    </section>
+  </body>
+</html>

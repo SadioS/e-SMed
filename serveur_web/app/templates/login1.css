@@ -1,0 +1,43 @@
+#bloc
+{
+  width: 900px;
+  margin: auto;
+}
+
+header
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+#bienvenu
+{
+    display: flex;
+    flex-direction: column;
+}
+#logo
+{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+
+header h1
+{
+  display: flex;
+  padding: auto;
+  justify-content: space-between;
+  font-size: 1em;
+  font-weight: normal;
+  margin-right: auto;
+  margin-bottom: 80px;
+}
+
+section{
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <metacharset = "utf 8">
+    <link rel="stylesheet" href={{ url_for('static', filename='accueil.css') }}/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>e-SMed</title>
+  </head>
+
+  <SCRIPT SRC='login.js'></SCRIPT>
+
+  <body>
+    
+    <div class='container'>
+      <div class='logo'>
+        <video src='{{url_for('static', filename='logo.mp4')}}' type='video/mp4' loop autoplay width="200" height="200"></video>
+      </div>
+
+      <div class='formContainer'>
+
+        <div class='img'>
+          <image src={{ url_for('static', filename='img2.jpg') }} ></image>
+        </div>
+
+          <div class='login'>
+            <h1>Bienvenue sur e-SMed<br/><br/></h1>
+            <div class="bouton">
+              <form method="post" action="/fhir" method="get">
+                <input type="submit" value="Accédez à votre espace patient" id='logbouton'/>
+                </form>
+              </div>
+              <div class="bouton">
+              <form method="post" action="/login" method="get">
+                <input type="submit" value="Accédez à votre espace médecin " id='logbouton'/>
+                </form>
+              </div>
+              <div class="bouton">
+              <form method="post" action="/new" method="get">
+                <input type="submit" value="Creer votre espace utilisateur" id='logbouton'/>
+                </form>
+              </div>
+          </div>
+
+        </div>
+      </div>
+      </form>
+  </body>

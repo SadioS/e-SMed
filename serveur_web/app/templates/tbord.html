@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+     <title>e-SMED</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href={{ url_for('static', filename="css/bootstrap.min.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/font-awesome.min.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/animate.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/owl.carousel.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/owl.theme.default.min.css") }}>
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href={{ url_for('static', filename="css/connexion_p.css") }}>
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <!-- <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section> -->
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>e-SMED, vos résultat en un clic</p>
+                    </div>
+
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> 0123456789</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 9h00 - 18h00 / Lun-Ven </span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@e-SMED.fr</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                     <video src='{{url_for('static', filename='images/logo.mp4')}}' type='video/mp4' loop autoplay width="200" height="100"></video>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href= "/tbord" class="smoothScroll">Accueil</a></li>
+                         <li><a href="#resultat" class="smoothScroll">Mes résultats</a></li>
+                         <li><a href="#rdv" class="smoothScroll">Mes rendez-vous</a></li>
+                         <li class="appointment-btn"><a href = />Déconnexion</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     
+
+
+     <!-- ABOUT -->
+     <section id="about">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.6s">Bienvenue dans votre espace personnel {{prenom}}</h2>
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <p>Depuis votre espace personnel, accédez à votre tableau de bord. </p>
+                                   <p>Vous pourrez ainsi accéder à vos résultats d'analyses, vos documents, communiquez avec vos médecins, accédez à vos rendez-vous.</p>
+                                  
+                              </div>
+                              
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- RESULTATS -->
+     <section id="resultat">
+          <div class="container">
+               <div class="row">
+
+                    <!-- <div class="col-md-6 col-sm-6">
+                         <img src={{ url_for('static', filename="images/appointment-image.jpg") }} class="img-responsive" alt="">
+                    </div> -->
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.6s">Mes résultats</h2>
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <p>Accédez à vos derniers résutats</p>
+                              </div>
+
+                              <figure class="profile wow fadeInUp" data-wow-delay="1s">
+                                   <form method="get" action="/choix">
+                                        <input type="submit" value="Obtenir mes derniers résultats" id='logbouton'/>
+                                   </form>
+                                   <!-- <img src={{ url_for('static', filename="images/author-image.jpg") }} class="img-responsive" alt="">
+                                   <figcaption>
+                                        <h3>Dr. MOREL Laura</h3>
+                                        <p>General Principal</p>
+                                   </figcaption> -->
+                              </figure>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <!-- DOCUMENTS -->
+     <!--section id="DOCUMENTS">
+          <div class="container">
+               <div class="row">
+
+                    <!-- <div class="col-md-6 col-sm-6">
+                         <img src={{ url_for('static', filename="images/appointment-image.jpg") }} class="img-responsive" alt="">
+                    </div> -->
+
+                   <!--<div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.6s">Mes documents</h2>
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <p>Accédez à vos documents </p>
+                                   <p>blablabla</p>
+                              </div>
+                              <figure class="profile wow fadeInUp" data-wow-delay="1s">
+                                   <form method="get"  action="/pdf" >
+                                        <input type="submit" value="Mes documents" id='logbouton'/> 
+                                   </form>--> 
+                                   <!-- <img src={{ url_for('static', filename="images/author-image.jpg") }} class="img-responsive" alt="">
+                                   <figcaption>
+                                        <h3>Dr. MOREL Laura</h3>
+                                        <p>General Principal</p>
+                                   </figcaption> 
+                              </figure>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section> -->
+
+    <!--  Rendez-vous -->
+    <section id="rdv">
+          <div class="container">
+               <div class="row">
+
+                    <!-- <div class="col-md-6 col-sm-6">
+                         <img src={{ url_for('static', filename="images/appointment-image.jpg") }} class="img-responsive" alt="">
+                    </div> -->
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.6s">Mes rendez-vous</h2>
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <p>Depuis cette espace, vous pouvez accédez à vos rendez-vous ou en prendre un nouveau.</p>
+                              </div>
+                              <figure class="profile wow fadeInUp" data-wow-delay="1s">
+                                   <form method="get"  action="/e_rdv">
+                                        <input type="submit" value="Mes rendez-vous" id='logbouton'/>
+                                        <input type="hidden" readonly='idp' value={{idp}}/>
+                                   </form>
+                                   <!-- <img src={{ url_for('static', filename="images/author-image.jpg") }} class="img-responsive" alt="">
+                                   <figcaption>
+                                        <h3>Dr. MOREL Laura</h3>
+                                        <p>General Principal</p>
+                                   </figcaption> -->
+                              </figure>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <section id="appointment" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                         <!-- CONTACT FORM HERE -->
+                         <form id="appointment-form" role="form" method="post" >
+     
+                             
+                                   <div class="col-md-12 col-sm-12">
+                                        <form method="post" >
+                                             <input type="hidden" readonly value='idph' value={{idp}}/>
+                                          </form>
+                                   </div>
+                              </div>
+                        </form>
+                    </div>
+     
+               </div>
+          </div>
+     </section>
+
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+
+                   
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text">
+                                   <p>Copyright &copy; 2018 Your Company
+
+                                   | Design: Tooplate</p>
+                              </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                              <div class="footer-link">
+                                   <a href="#">Test laboratoire</a>
+                                   <a href="#">Départements</a>
+                    
+                                   <a href="#">Carières</a>
+                              </div>
+                         </div>
+                         <div class="col-md-2 col-sm-2 text-align-center">
+                              <div class="angle-up-btn">
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+     
+     <link rel="stylesheet" href={{ url_for('static', filename="js/jquery.js") }}>
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.sticky.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+</html>

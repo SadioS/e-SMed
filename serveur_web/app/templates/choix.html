@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <metacharset = "utf 8">
+    <link rel="stylesheet" href={{ url_for('static', filename='accueil.css') }}/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>e-SMed</title>
+  </head>
+
+  <SCRIPT SRC='login.js'></SCRIPT>
+
+  <body>
+    <div class='container'>
+      <div class='logo'>
+        <video src='{{url_for('static', filename='logo.mp4')}}' type='video/mp4' loop autoplay width="200" height="200"></video>
+      </div>
+
+      <div class='formContainer'>
+
+        <div class='img'>
+          <image src={{ url_for('static', filename='img2.jpg') }} ></image>
+        </div>
+
+          <div class='login'>
+            <h1>Bienvenue dans votre espace personnel<br/><br/></h1>
+            <p> Vos résultats sont disponible en un clic.
+            Vous pouvez ainsi les obtenir au format pdf afin de les utiliser, ou simplement les visualiser sur votre écran.</p>
+              <div class="bouton">
+              <form method="get" action="/pdf">
+                <input type="submit" value="Résultat au format pdf" id='logbouton'/>
+                </form>
+              </div>
+              <div class="bouton">
+              <form method="get" action="/valide">
+                <input type="submit" value="Visualiser les résultats" id='logbouton'/>
+                </form>
+              </div>
+              <div class="bouton">
+              <form method="get" action="/">
+                <input type="submit" value="Se déconnecter" id='logbouton'/>
+                </form>
+              </div>
+          </div>
+
+        </div>
+      </div>
+      </form>
+  </body>

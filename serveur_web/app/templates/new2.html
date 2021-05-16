@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+     <title>e-SMED</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href={{ url_for('static', filename="css/bootstrap.min.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/font-awesome.min.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/animate.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/owl.carousel.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/owl.theme.default.min.css") }}>
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href={{ url_for('static', filename="css/tooplate-style.css") }}>
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <!-- <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section> -->
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>e-SMED, vos résultat en un clic</p>
+                    </div>
+
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> 0123456789</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 9h00 - 18h00 / Lun-Ven </span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@e-SMED.fr</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                     <video src='{{url_for('static', filename='images/logo.mp4')}}' type='video/mp4' loop autoplay width="200" height="100"></video>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li class="appointment-btn"><a href = />Retour à l'accueil</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+
+    <!-- Nouvel utilisateur -->
+    <section id="appointment" data-stellar-background-ratio="3">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-6 col-sm-6">
+                    <img src={{ url_for('static', filename="images/appointment-image.jpg") }} class="img-responsive" alt="">
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                    <!-- CONTACT FORM HERE -->
+                    <p> <h2><strong>{{error}}</strong></h2> </p>
+                    <form id="appointment-form" role="form" method="post" >
+
+                         <!-- SECTION TITLE -->
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                              <h2>Nouvel utilisateur? Enregistez-vous </h2>
+                         </div>
+
+                         <div class="wow fadeInUp" data-wow-delay="0.8s">
+                              <div class="col-md-6 col-sm-6">
+                                   <label for="surname">Nom</label>
+                                   <input type='text' class="form-control" name='nom' id='nom' placeholder="nom" autofocus required>
+                              </div>
+
+                               <div class="col-md-6 col-sm-6">
+                                   <label for="name">Prénom</label>
+                                   <input type='text' class="form-control" name='prenom' id='prenom' placeholder="prénom" required>
+                              </div>
+
+                              <div class="col-md-6 col-sm-6">
+                                <label for="date">Date de naissance</label>
+                                <input type="date" class="form-control" name="date" id="date" placeholder="date de naissance" required>
+                            </div>
+
+                              <div class="col-md-6 col-sm-6">
+                                   <label for="email">mail</label>
+                                   <input type='email' class="form-control" name="mail" id='mail' placeholder="email" required>
+                              </div>
+
+                              <div class="col-md-6 col-sm-6">
+                                   <label for="tel">Téléphone</label>
+                                   <input type="tel" class="form-control" name="num" id="num" placeholder="numéro de téléphone" required><br/>
+                              </div>
+
+                              <div class="col-md-6 col-sm-6">
+                                <label for="name">Adresse</label>
+                                <input type='text' class="form-control" name='adresse' id='adresse' placeholder="Adresse" required>
+                              </div>
+
+                              <div class="col-md-6 col-sm-6">
+                                <label for="poste">Code postal</label>
+                                <input type="number" class="form-control" name="poste" id="poste" placeholder="Code postal" required><br/>
+                              </div>
+
+                              <div class="col-md-6 col-sm-6">
+                                <label for="name">Ville</label>
+                                <input type='text' class="form-control" name='ville' id='ville' placeholder="ville" required>
+                              </div>
+
+                              <div class="col-md-6 col-sm-6">
+                                   <label for="mdp">Mot de pase</label>
+                                   <input type='password' class="form-control" name='mdp' id="mdp" placeholder="mot de passe" maxlength="15" required/>
+                                   
+                              </div>
+
+                              <div class="col-md-6 col-sm-6">
+                                <label for="mdp">Confirmer le mot de passe</label>
+                                <input type='password' class="form-control" name='mdp2' id="mdp2" placeholder="mot de passe" maxlength="15" required/>
+                           </div>
+
+                              <div class="col-md-12 col-sm-12"></div>
+                                   <button type="submit" class="form-control" id="cf-submit" name="submit">Submit Button</button>
+                              </div>
+                         </div>
+                   </form>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+  
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.sticky.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+</html>

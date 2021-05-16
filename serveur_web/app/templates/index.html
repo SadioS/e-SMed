@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <metacharset = "utf 8">
+    <link rel="stylesheet" href={{ url_for('static', filename='accueil.css') }}/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>e-SMed</title>
+  </head>
+
+  <SCRIPT SRC='login.js'></SCRIPT>
+
+  <body>
+    <form method="post">
+    <div class='container'>
+      <div class='logo'>
+        <video src='{{url_for('static', filename='logo.mp4')}}' type='video/mp4' loop autoplay width="200" height="200"></video>
+      </div>
+
+      <div class='formContainer'>
+
+        <div class='img'>
+          <image src={{ url_for('static', filename='img2.jpg') }} ></image>
+        </div>
+
+          <div class='login'>
+            <h1>Recherche données patient</h1>
+              <div class='inputRow'>
+                <div class='inputIcon'>
+                  <i class='bx bx-user bx-tada' ></i>
+                </div>
+                  <input type='text' name='nom' id='nom' placeholder="id du patient" autofocus required/>
+              </div>
+             
+              
+
+              <div class="bouton">
+                <input type="submit" value="Rechercher" id='logbouton'/>
+                
+              </div>
+          </div>
+        </div>
+      </div>
+      </form> 
+
+<!-- <p id="demo"></p>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"> Données de vaccinations patient</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ID patient</td>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>Date de naissance</td>
+        <td>Vaccin pris</td>
+        <td>Prochain vaccin</td>
+      </tr>
+      <tr>
+        <td id = 'id'></td>
+        <td id = 'nom'></td>
+        <td id = 'pre'></td>
+        <td id = 'd'></td>
+        <td id = 'vac1'></td>
+        <td id = 'vac2'></td>
+      </tr>
+  </tbody>
+      
+    </table> -->
+
+<script language = 'javascript'>
+ /*var myObj = {"resourceType": "Patient",
+              "id": "Pat1",
+              "active": True,
+              'name': [{"family" : "Ackerman",
+              'given' : ['Mikasa']}],
+              'gender' : 'female',
+              'address': [{"country": "France"}],
+              'gender' : 'female',
+            'birthDate' : '2020-09-24'
+            };
+var x = myObj.id;
+var Obj = JSON.parse(myObj)
+function myFunction() {
+  document.getElementById("demo").innerHTML = myObj.id;
+}*/
+
+var pat1 = {"resourceType": "Patient", 
+      "id": "Pat1", 
+      'name': [ "Ackerman", 'Mikasa'], 
+      'gender' : 'female',
+      'address': [{"country": "France"}],
+             'gender' : 'female',
+            'birthDate' : '2020-09-24'};
+
+var vac = {
+  "resourceType": "Immunization",
+  "id": "Pat1",
+  "status": "completed",
+  "vaccineCode": "BCG",
+  "patient": {
+    "reference": "1"},
+  "occurrenceDateTime": "2021-02-26",
+  "route": {
+    "coding": [
+      {"system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+        "code": "IM",
+        "display": "Injection, intramuscular"}]},
+  "doseQuantity": 2};
+
+  var vac2 = {
+  "resourceType": "ImmunizationRecommendation",
+  "id": "Pat1",
+  "patient": {"reference": "1"},
+  "date": "2015-02-09T11:04:15.817-05:00",
+  "authority": {"reference": "Organization/hl7"},
+  "recommendation": "Diphtérie", 
+      "description": "First sequence in protocol",
+      "series": "Vaccination Series 1",
+      "doseNumberPositiveInt": 1,
+      "seriesDosesPositiveInt": 3,
+      
+    }
+
+
+var x1 = pat1.id
+var x2 = pat1.name[0]
+var x3 = pat1.name[1]
+var x4 = pat1.birthDate
+var x5 = vac.vaccineCode
+var x6 = vac2.recommendation
+document.getElementById('demo').innerHTML = x3;
+document.getElementById('id').innerHTML = x1;
+document.getElementById('nom').innerHTML = x2;
+document.getElementById('pre').innerHTML = x3;
+document.getElementById('d').innerHTML = x4;
+document.getElementById('vac1').innerHTML = x5;
+document.getElementById('vac2').innerHTML = x6;
+</script>
+
+<script href="/documents/PDF/monFichier.pdf">
+  
+</script>
+
+</body>
+</html>

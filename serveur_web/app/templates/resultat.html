@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+     <title>e-SMED</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href={{ url_for('static', filename="css/bootstrap.min.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/font-awesome.min.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/animate.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/owl.carousel.css") }}>
+     <link rel="stylesheet" href={{ url_for('static', filename="css/owl.theme.default.min.css") }}>
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href={{ url_for('static', filename="css/info.css") }}>
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <!-- <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section> -->
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>e-SMED, vos résultat en un clic</p>
+                    </div>
+
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> 0123456789</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 9h00 - 18h00 / Lun-Ven </span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@e-SMED.fr</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                     <video src='{{url_for('static', filename='images/logo.mp4')}}' type='video/mp4' loop autoplay width="200" height="100"></video>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="/tbord_m" class="smoothScroll">Accueil</a></li>
+                         <li class="appointment-btn"><a href = /fhir }}>Retour</a></li>
+                         <li class="appointment-btn"><a href = / }}>Se déconnecter</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+     
+     
+
+     <!-- ABOUT -->
+     <section id="about">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.6s">Données patient</h2>
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <p>Depuis cet espace, vous avez accès aux données de vos patients. Cela concerne les informations personnelles (nom, prénom, etc..), comme les informations médicales.</p>
+                                   <p>Quel est votre identifiant : <h2><strong>{{idp}}</strong></h2></p>
+                                   <p>Ces données sont confidentielles. Vous ne pouvez en aucun cas les partagés si ce n'est à des fins médicales et avec l'accord du patient ou de son tuteur.</p><br/><br/>
+                                   {% for a in pat %}
+                                   <table>
+                                        <thead>
+                                             <tr>
+                                                  <th colspan="9" width=100%> <center>Données patient</center></th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             <tr>
+                                             <td width=12%>Nom</td>
+                                             <td width=12%>Prenom</td>
+                                             <td width=12%>Date de naissance</td>
+                                             <td width=12%>Mail</td>
+                                             <td width=13%>Telephone</td>
+                                             <td width=13%>Adresse</td>
+                                             <td width=13%>Code postale</td>
+                                             <td width=13%>Ville</td>
+                                             
+                                             </tr>
+                                        <tr>
+                                        <td width=12%>{{ a[0] }}</td>
+                                        <td width=12%>{{ a[1] }}</td>
+                                        <td width=12%>{{ a[2] }}</td>
+                                        <td width=12%>{{ a[3] }}</td>
+                                        <td width=13%>{{ a[4] }}</td>
+                                        <td width=13%>{{ a[5] }}</td>
+                                        <td width=13%>{{ a[6] }}</td>
+                                        <td width=13%>{{ a[7] }}</td>
+                                        </tr>
+                                   </tbody>
+                                        
+                                   </table>
+                                   {% endfor %}
+                                   <br/><br/><br/>
+                                      {% for a in vac %}
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th colspan="4" width=100%> <center>Vaccin pris</center></th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                  <td width=25%>ID patient</td>
+                                                  <td width=25%>Code vaccin</td>
+                                                  <td width=25%>Display</td>
+                                                  <td width=25%>Quantite</td>
+                                                  </tr>
+                                             <tr>
+                                             <td width=25%>{{ a[0] }}</td>
+                                             <td width=25%>{{ a[1] }}</td>
+                                             <td width=25%>{{ a[3] }}</td>
+                                             <td width=25%>{{ a[4] }}</td>
+                                             </tr>
+                                        </tbody>
+                                             
+                                        </table>
+
+                                        {% endfor %}
+                                      <br/><br/><br/>
+                                        {% for a in vac1 %}
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th colspan="6" width=100%> <center>Prochain vaccin</center></th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                  <td width=20%>ID patient</td>
+                                                  <td width=20%>Code vaccin</td>
+                                                  <td width=20%>Description</td>
+                                                  <td width=20%>Série</td>
+                                                  <td width=20%>nb série total</td>
+                                                  </tr>
+                                             <tr>
+                                             <td width=20%>{{ a[0] }}</td>
+                                             <td width=20%>{{ a[2] }}</td>
+                                             <td width=20%>{{ a[3] }}</td>
+                                             <td width=20%>{{ a[4] }}</td>
+                                             <td width=20%>{{ a[6] }}</td>
+                                             </tr>
+                                        </tbody>
+                                             
+                                        </table>
+
+                                        {% endfor %}
+                                        <br/><br/><br/>
+                                        {% for a in MED %}
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th colspan="6" width=100%> <center>Ordonnance médicament</center></th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                  <td width=16%>ID patient</td>
+                                                  <td width=16%>Réference</td>
+                                                  <td width=17%>Display</td>
+                                                  <td width=17%>Code</td>
+                                                  <td width=17%>Instruction (1)</td>
+                                                  <td width=17%>Instruction (2)</td>
+                                                  </tr>
+                                             <tr>
+                                             <td width=16%>{{ a[0] }}</td>
+                                             <td width=16%>{{ a[4] }}</td>
+                                             <td width=17%>{{ a[6] }}</td>
+                                             <td width=17%>{{ a[7] }}</td>
+                                             <td width=17%>{{ a[8] }}</td>
+                                             <td width=17%>{{ a[9] }}</td>
+                                             </tr>
+                                        </tbody>
+                                             
+                                        </table>
+
+                                        {% endfor %}
+
+
+                              </div>
+                         </div>
+                    </div>
+
+          </div>
+     </section>
+
+     
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+                   <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text">
+                                   <p>Copyright &copy; 2018 Your Company
+
+                                   | Design: Tooplate</p>
+                              </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                              <div class="footer-link">
+                                   <a href="#">Test laboratoire</a>
+                                   <a href="#">Départements</a>
+                                   <a href="#">Carières</a>
+                              </div>
+                         </div>
+                         <div class="col-md-2 col-sm-2 text-align-center">
+                              <div class="angle-up-btn">
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.sticky.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+</html>

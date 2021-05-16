@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <metacharset = "utf 8">
+    <link rel="stylesheet" href="accueil.css"/>
+    <title>e-SMed Espace personnel</title>
+  </head>
+
+  <body id='pdf'>
+    <div class='container'>
+    
+      <div class='formContainer'>
+    
+        <h2>Bienvenue dans votre espace personnel {{nom[0][1]}}{{nom[0][0]}} </h2>
+        
+        <p>Voici les résultats de votre dernier test
+        <section id='tab'>
+            <p> NUMERATION GLOBULAIRE</p>
+        <div class='gauche'>
+          {% for pa in pat %}
+            <p>Hématies    =      {{ pa[0] }}<br/>Hémoglobine    =      {{ pa[1] }}<br/>Hématocrite    =      {{ pa[2] }} <br/>VGM            =     {{ pa[3] }}<br/>TCMH           =      {{ pa[4] }}<br/>CCMH =      {{ pa[5] }}<br/>Leucocytes     =      {{ pa[6] }}<br/></p>
+        </div>
+        
+            <p> FORMULE LEUCOCYTAIRE</p>
+            
+        <div class='gauche'>
+            <p>PN          =         {{ pa[7] }}<br/>PE          =         {{ pa[8] }}<br/>PB          =         {{ pa[9] }}<br/>Lymphocytes =         {{ pa[10] }}<br/>Monocytes   =        {{ pa[11] }}<br/></p>
+        </div>
+        
+        </p>
+        {% endfor %}
+        </section>
+
+        <section id='med'>
+          <p> ORDONNANCE</p>
+      <div class='gauche'>
+        {% for m in med%}
+          <p>Reférence médicament    =      {{ m[0] }}<br/>Code    =      {{ m[1] }}<br/>Instruction    =      {{ m[2] }} </p>
+      </div>
+      {% endfor %}
+
+  </body>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
+  
+  <script>
+   var doc = new jsPDF()
+   var div = document.querySelector("#tab")
+   doc.fromHTML(div, 15, 15)
+   doc.save("résultat.pdf")
+   </script>
+   
+   <script>
+    var doc = new jsPDF()
+    var div = document.querySelector("#med")
+    doc.fromHTML(div, 15, 15)
+    doc.save("résultat.pdf")
+    </script>
+
+   <div class="bouton">
+              <form method="get" action="/choix">
+                <input type="submit" value="RETOUR" id='logbouton'/>
+                </form>
+              </div>
+              
+              <div class="bouton">
+              <form method="get" action="/">
+                <input type="submit" value="ACCUEIL" id='logbouton'/>
+                </form>
+              </div>
+              
+              <div class="bouton">
+              <form method="get" action="/">
+                <input type="submit" value="Se déconnecter" id='logbouton'/>
+                </form>
+              </div>
+</html>  

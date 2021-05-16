@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <metacharset = "utf 8">
+    <link rel="stylesheet" href="accueil.css"/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>e-SMed</title>
+  </head>
+
+  <SCRIPT SRC='login.js'></SCRIPT>
+
+  <body>
+    <form method="post">
+    <div class='container'>
+      <div class='logo'>
+        <video src='{{url_for('static', filename='logo.mp4')}}' type='video/mp4' loop autoplay width="200" height="200"></video>
+      </div>
+
+      <div class='formContainer'>
+
+        <div class='img'>
+          <image src='img2.jpg' width='200' ></image>
+        </div>
+
+          <div class='login'>
+            <h1>Accédez à votre espace personnel</h1>
+              <div class='inputRow'>
+                <div class='inputIcon'>
+                  <i class='bx bx-user bx-tada' ></i>
+                </div>
+
+                  <input type='text' name='mail' id='mail' placeholder="identifiant" />
+
+              </div>
+              <div class='inputRow'>
+                <div class='inputIcon'>
+                  <i class='bx bx-lock' ></i>
+                </div>
+
+                  <input type='password' name='mdp' id="mdp" placeholder="mot de passe" maxlength="15" required/><br/><br/>
+              </div>
+
+              <div class='row'>
+                <div class='col'>
+                  <input type='checkbox' name='SeSouvenir' id='SeSouvenir'>
+                  <label for='SeSouvenir'> Se souvenir de moi</label>
+                </div>
+                <a href='#' id='MdpOublie'>Mot de passe oublié</a>
+              </div>
+
+              <div class="bouton">
+                <input type="submit" value="Envoyer" id='logbouton'/>
+                <input type="submit" value="Première connexion" id="enregistrer"/>
+              </div>
+          </div>
+
+        </div>
+      </div>
+      </form>
+  </body>
